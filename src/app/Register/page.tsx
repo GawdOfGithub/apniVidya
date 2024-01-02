@@ -65,6 +65,10 @@ export default function TeacherForm() {
       {
         try
         {
+          const formData = new FormData();
+          Object.keys(data).forEach((key) => {
+            formData.append(key, data[key]);
+          });
           console.log(data);
 
           const file = (document.getElementById('picture') as HTMLInputElement)?.files?.[0];

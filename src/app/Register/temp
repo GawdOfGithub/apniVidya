@@ -1,0 +1,31 @@
+try
+        {
+         
+          const formData = new FormData();
+          Object.keys(data).forEach((key) => {
+            formData.append(key, data[key]);
+          });
+
+          const file = (document.getElementById('picture') as HTMLInputElement)?.files?.[0];
+    
+          if (file) {
+        
+            formData.append('pic', file);
+            
+            console.log(formData);
+            await submit({formData})
+          } else {
+            console.error('No file selected');
+          }  
+      //   const {name,bio,location,email,subject,experience,number,pic} = data
+      //  await createUser({
+      //   bio,
+      //   email,
+      //   experience,
+      //   location,
+      //   name,
+      //   number,
+      //   pic,
+      //   subject
+      //  })
+      }
